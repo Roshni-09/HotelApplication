@@ -1,0 +1,7 @@
+mat-card{
+align-self: auto;
+}
+.example-button-row button,
+.example-button-row a {
+  margin-right: 10px;
+}

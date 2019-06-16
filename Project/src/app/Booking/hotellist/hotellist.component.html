@@ -1,0 +1,31 @@
+<div fxLayout="row">
+    <app-hotelfilter></app-hotelfilter>
+    <div>
+        <app-hotelsearch></app-hotelsearch>
+        <div>
+            <div>
+                <p>
+                    <span>Results: {{establishments.length}}</span>
+                  <span class="sort-buttons"  >Sort By Rating Only
+                    <mat-icon (click)="getRating()">swap_vertical</mat-icon> Price Only<mat-icon (click)="getPrice()">swap_vertical</mat-icon>
+                    </span> 
+                    
+                  </p>
+                  <hr>
+              </div>
+            <mat-card fxLayout="row wrap">
+              
+              <div *ngFor="let establishment of establishments"  fxflex>
+            
+                <app-hotelitem [hotelItem]="establishment"></app-hotelitem>
+            
+              </div>
+            </mat-card>
+            
+        </div> 
+    </div>   
+</div>
+
+
+
+

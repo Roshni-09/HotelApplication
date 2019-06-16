@@ -1,0 +1,37 @@
+<form [formGroup]="profileForm" (ngSumbit)="onsubmit()">
+  <p>
+    <mat-form-field>
+      <input matInput placeholder="Enter your Name" formControlName="name" required>
+      <mat-error *ngIf="profileForm.get('name').invalid">{{getNameErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+  </p>
+  <p>
+    <mat-form-field>
+      <input matInput placeholder="Enter your email" formControlName="email" required>
+      <mat-error *ngIf="profileForm.get('email').invalid">{{getEmailErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+  </p>
+  <p>
+    <mat-form-field>
+      <input matInput placeholder="Enter your password" formControlName="password" required>
+      <mat-error *ngIf="profileForm.get('password').invalid">{{getPasswordErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+  </p>
+  <p>
+      <mat-form-field>
+        <input matInput placeholder="Enter your phoneno" formControlName="phoneno" required>
+        <mat-error *ngIf="profileForm.get('phoneno').invalid">{{getPhonenoErrorMessage()}}</mat-error>
+      </mat-form-field>
+  
+    </p>
+  <p>
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="user">User</mat-radio-button>
+      <mat-radio-button value="merchent">Merchent</mat-radio-button>
+    </mat-radio-group>
+  </p>
+<button mat-button>SignUp</button>
+</form>

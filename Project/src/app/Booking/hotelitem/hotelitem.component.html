@@ -1,0 +1,17 @@
+
+<mat-card  fxLayout="row wrap" fxLayoutAlign="start stretch" fxLayoutGap="20px">
+    <div fxLayout="row wrap" fxLayoutGap="10px">  
+        
+        <img class="images" src="../../../assets/images/download.jpg"  width="200px" height="200px">
+        <div >
+          <h3>{{hotelItem.name}}</h3>
+          <h6>{{hotelItem.location}}&nbsp;&nbsp;{{hotelItem.city}}</h6>
+          <h6>Car parking | First Aid | Wifi Facility</h6>
+          <h6><span><i class="material-icons">star</i>{{hotelItem.averageRating}}</span>&nbsp;&nbsp;
+          {{hotelItem.price| currency:'&#8377;'}}</h6>
+          
+          <button mat-raised-button class="View" color="primary">View Details</button>&nbsp;
+          <button mat-raised-button  class="Booking" color="accent">Booking Now</button>
+          </div>
+        </div>
+</mat-card>

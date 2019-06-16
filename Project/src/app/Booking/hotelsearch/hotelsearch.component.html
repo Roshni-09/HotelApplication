@@ -1,0 +1,21 @@
+<mat-card>
+<div fxLayout="row" fxLayoutGap="50px">
+    <mat-form-field>
+    <input matInput placeholder="Location" [(ngModel)]="loc">
+    </mat-form-field>
+    <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+    <input matInput placeholder="No of Guest" [(ngModel)]="guest">
+    <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <mat-icon><i class="material-icons" (click)="getAdd()">add</i></mat-icon>
+    </span>
+    </mat-form-field>
+    <div class="example-button-row">
+    <button mat-raised-button color="primary">Search</button>
+    </div>
+    </div>
+</mat-card>

@@ -1,0 +1,59 @@
+<mat-card  fxLayoutGap="10px">
+        <form [formGroup]="profileForm" (ngSubmit)="getfilter">
+   <div>
+    <h4>Filter</h4>
+    <mat-form-field>
+    <input matInput placeholder="Search" required formControlName="search">
+    </mat-form-field>
+ </div>
+
+ <div>
+    <h4>Type</h4>
+    <mat-checkbox formControlName="hotel">Hotel</mat-checkbox><br>
+    <mat-checkbox formControlName="homestay">HomeStay</mat-checkbox>
+    </div>
+
+    <div>
+    <h4>Location</h4>
+    <mat-form-field><input matInput placeholder="search Location" required  formControlName="location"></mat-form-field>
+    <mat-checkbox>Gandhipuram</mat-checkbox>
+    <mat-checkbox>Rs Puram</mat-checkbox> 
+    <mat-checkbox>Ganapathy</mat-checkbox> 
+    <mat-checkbox>Peelamedu</mat-checkbox> 
+</div>
+
+<div>
+    <h4>Rating</h4>
+    <input matInput placeholder="Rating" formControlName="Rating" required>
+    <div (click)="setRatings(4)">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent">star</mat-icon>
+    <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent">star</mat-icon>
+    <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent">star</mat-icon>
+    <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent">star</mat-icon>
+  </div>
+  <div (click)="setRatings(3)">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent">star</mat-icon>
+    <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent">star</mat-icon>
+    <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent">star</mat-icon>
+  </div>
+  <div (click)="setRatings(2)">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent">star</mat-icon>
+    <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent">star</mat-icon>
+  </div>
+  <div (click)="setRatings(1)">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent">star</mat-icon>
+  </div>
+        </div>
+<div>
+    <h4>Price</h4>
+    <mat-slider 
+           class="exmaple-margin"
+            [max]="10000"
+            [min]="1000"
+            formControlName="priceMin">
+    </mat-slider>
+    <p>{{profileForm.value.priceMin}}&nbsp;&nbsp;&nbsp;{{profileForm.value.priceMax}}</p>
+
+</div>
+</form>
+</mat-card>
