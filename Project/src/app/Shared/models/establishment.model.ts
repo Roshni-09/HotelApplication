@@ -10,9 +10,19 @@ export class Establishment {
     city: string;
     capacity: number;
     isBlock: boolean;
-    averageRating: number;
+    averagerating: number;
     reviews: Review[];
     bookingList: Booking[];
     amenities: string[];
     owner: User;
-}
+
+    constructor(id:number,name:string,type:string,location:string,averageRating:number) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.location=location;
+        this.averagerating= averageRating;
+        }
+    }
+
+    

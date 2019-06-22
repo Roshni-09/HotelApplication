@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <span><i style="color:#edeaf7;" routerLink="/search">Book my Room!</i></span>
+  <span style="margin-left:68%">
+    <button mat-button class="signin" routerLink="/sign-in" *ngIf="!isLoggedIn">Signin</button>
+    <button mat-button class="a" routerLink="/mybooking" *ngIf="isLoggedIn">My Booking</button>
+    <button mat-button class="b" *ngIf="isLoggedIn" (click)="auth.logout()">Logout </button>
+    <button mat-button class="c" routerLink="/profile" *ngIf="isLoggedIn">EditProfile</button>
+   
+
+  </span>
+</mat-toolbar>

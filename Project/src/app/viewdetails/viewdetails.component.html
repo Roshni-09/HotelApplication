@@ -1,0 +1,52 @@
+<form [formGroup]="viewDate" (ngSubmit)="onSubmit()">
+  <div>
+    <img class="images" src="../../assets/images/item..jpg" alt="rose" width="1200px" height="400px">
+  </div>
+
+  <div>
+    <h3>{{hotelData.name}}</h3>
+    <h4>{{hotelData.location}}&nbsp;&nbsp;{{hotelData.city}}</h4>
+    <p><b>Price</b>:{{hotelData.price * count}}</p>
+    <!-- <h4>Car parking | First Aid | Wifi Facility</h4>
+        <h4><span><i class="material-icons">star</i>{{hotelData.averageRating}}</span></h4> -->
+    <!-- From<input type="Date">&nbsp;&nbsp;To<input type="Date"> -->
+
+    <mat-form-field>
+      From<input matInput [matDatepicker]="picker" formControlName="date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> &nbsp;&nbsp;
+    <mat-form-field>
+      To<input matInput [matDatepicker]="picker1" formControlName="todate">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+    <div class="div1">
+      {{hotelData.price| currency:'&#8377;'}}/per room
+      <div class="sort-buttons">
+        <button mat-raised-button color="accent" (click)="confirm()">Book Now</button>
+      </div>
+    </div>
+
+
+  </div>
+  <hr>
+  <mat-card>
+    <div *ngFor="let review of hotelData.reviews" class=div2 fxLayout="row">
+      <div>
+        <img src="../../assets/images/user.png" alt="Avatar" style="width:50px" class="img">
+        <p>{{review.reviewed_by.name}}</p>
+      </div>
+      <div class="column" style="margin-left: 50px">
+        <div class="row">
+          <span *ngFor="let icon of [].constructor(review.rating)">
+            <mat-icon>star</mat-icon>
+          </span>
+        </div>
+
+        <p> {{review.reviewcontent}} </p>
+      </div>
+    </div>
+  </mat-card>
+</form>

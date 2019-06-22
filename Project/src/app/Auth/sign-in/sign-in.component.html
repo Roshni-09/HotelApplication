@@ -1,5 +1,9 @@
-<div>
+<div class="divclass">
+  <div id="formDiv">
   <form  [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    
+  <mat-card><h3>LOGIN</h3>
+    <div *ngIf="errormessage">{{errormessage}}</div>
     <p>
       <mat-form-field>
         <input matInput placeholder="Enter your email" formControlName="email" required>
@@ -9,13 +13,15 @@
     </p>
     <p>
       <mat-form-field>
-        <input matInput placeholder="Enter your password" formControlName="password" required>
+        <input matInput placeholder="Enter your password" type="password" formControlName="password" required>
         <mat-error *ngIf="profileForm.get('password').invalid">{{getPasswordErrorMessage()}}</mat-error>
       </mat-form-field>
     </p>
- 
+  
     
-      <button type="submit" mat-button>SignIn</button>
-    
+      <button type="submit" mat-raised-button color="primary" class="button">SignIn</button><br> 
+      New User  <a routerLink="/sign-up">Register Now</a>
+    </mat-card>
   </form>
+</div>
 </div>

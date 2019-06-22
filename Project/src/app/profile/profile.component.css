@@ -1,0 +1,34 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+  }
+  
+  
+  
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
+  button{
+    background-color: #0085ff;
+    width: 30px;
+    margin-top: 20px
+}
+mat-card{
+  width: 40%;
+  float: right;
+  margin-top: 30px;
+}
+form{
+  width: 181%;
+    margin-left: 50px;
+}

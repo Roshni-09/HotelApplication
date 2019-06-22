@@ -1,0 +1,67 @@
+
+<div fxlayout="row">
+  <span fxlayout="column">
+      <img src="../../assets/images/user.png"  style="width: 265px;
+      margin: auto;
+      margin-top: 30px;
+      margin-left: 108px;"/>
+      <span>{{profileForm.value.name}}</span>
+  </span>
+    
+  <mat-card>
+    <!-- Title of an Card -->
+    <mat-card-title>
+       Profile Edit
+    </mat-card-title>
+
+    <!-- Actual content starts from here -->
+    <mat-card-content>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <div class="example-container">
+                <mat-form-field>
+                    <input matInput placeholder="Enter User Name" formControlName="name" required>
+                    <mat-error *ngIf="f.name.errors">
+                        <div *ngIf="f.name.errors.required">User Name is required</div>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Enter your Phone number" formControlName="phoneNumber" required>
+                    <mat-error *ngIf="f.phoneNumber.errors">
+                        <div *ngIf="f.phoneNumber.errors.required">Mobile is required</div>
+                        <div *ngIf="f.phoneNumber.errors.minlength">mobile Number must be at least 10 Number</div>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Enter your email" formControlName="email" required>
+                    <mat-error *ngIf="f.email.errors">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                        <input matInput placeholder="Enter your password" formControlName="password" required
+                          [type]="hide ? 'password' : 'text'">
+                          <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                          </span>
+
+                        <mat-error *ngIf="f.password.errors">
+                          <div *ngIf="f.password.errors.required">Password is required</div>
+                          <div *ngIf="f.password.invalid">
+                            Password must be At least 8 characters in length one Lowercase letters
+                            One Uppercase letters one Numbers One Special characters
+                          </div>
+                        </mat-error>
+                      </mat-form-field>
+                        <p>Role</p>
+                        <mat-radio-group aria-label="Select an option" formControlName="role">
+                            <mat-radio-button value="3">User</mat-radio-button>
+                            <mat-radio-button value="2">Marchent</mat-radio-button>
+                          </mat-radio-group>
+                <button mat-button>Update</button>
+            </div>
+
+        </form>
+    </mat-card-content>
+</mat-card>
+</div>

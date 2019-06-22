@@ -19,9 +19,14 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
-
-
-
+import { SearchComponent } from './search/search.component';
+import { ViewdetailsComponent } from './viewdetails/viewdetails.component';
+import { HeaderComponent } from './header/header.component';
+import { ProfileComponent } from './profile/profile.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MybookingComponent } from './mybooking/mybooking.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -33,10 +38,14 @@ import { AppRoutingModule } from './app-routing.module';
     HotelfilterComponent,
     HotelsearchComponent,
     HotelitemComponent,
-    HotellistComponent
-   
-
-
+    HotellistComponent,
+    SearchComponent,
+    ViewdetailsComponent,
+    HeaderComponent,
+    ProfileComponent,
+    HotelsearchComponent,
+    MybookingComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -55,10 +64,15 @@ import { AppRoutingModule } from './app-routing.module';
      MatIconModule,
      FlexLayoutModule,
      MatButtonModule,
-     AppRoutingModule
+     MatTabsModule ,
+     AppRoutingModule,
+     MatDialogModule,
+     HttpClientModule,
+    
+     
   ],
   providers: [
-    MatDatepickerModule,  
+     
   ],
   bootstrap: [AppComponent]
 })

@@ -1,21 +1,30 @@
-<mat-card>
-<div fxLayout="row" fxLayoutGap="50px">
-    <mat-form-field>
-    <input matInput placeholder="Location" [(ngModel)]="loc">
-    </mat-form-field>
-    <mat-form-field>
-    <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="date">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
-    <input matInput placeholder="No of Guest" [(ngModel)]="guest">
-    <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-    <mat-icon><i class="material-icons" (click)="getAdd()">add</i></mat-icon>
-    </span>
-    </mat-form-field>
-    <div class="example-button-row">
-    <button mat-raised-button color="primary">Search</button>
+
+<form [formGroup]="searchform" (ngSubmit)="onSubmit()">
+
+
+    <div fxLayout="row" fxLayoutGap="50px">
+        <mat-form-field>
+            <input matInput placeholder="Location" formControlName="location" required>
+            <mat-error *ngIf="searchform.get('location').invalid">{{getLocationError()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" formControlName="date" placeholder="Choose a date" >
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="No of Guest" formControlName="guest">
+            <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon><i class="material-icons" (click)="getAdd()">add</i></mat-icon>
+            </span>
+        </mat-form-field>
+        <div class="example-button-row">
+            <button mat-raised-button color="primary" class="button">Search</button>
+        </div>
     </div>
-    </div>
-</mat-card>
+
+
+
+</form>
+

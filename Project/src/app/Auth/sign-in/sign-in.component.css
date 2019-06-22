@@ -1,9 +1,38 @@
-.my-form{
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
+form{
+  width: 25%;
+  margin: auto;
+  top: 50%;
+ left: 50%; 
+ color: beige;
+}
+.divclass{
+ 
+ 
+     position: fixed;
+    
+    background-repeat: no-repeat;
+     background-size: 100%;
+     background-position: center;
+     background-size: cover;
+      min-width: 100%;
+      height: 100%;
+      background-image: url("../../../assets/images/signin.jpeg");
+}
+#formDiv{
+  align-items: center;
+  padding-top: 100px;
+}
+
+ .button{
+  
+    height: 40px;
+    width: 100px;
+  
+   }
+   mat-form-field{
+     font-size: 20px;
+     font-family: 'Times New Roman', Times, serif;
+     color:blue;
+   }
    
-  .full-width {
-    width: 100%;
-  }
+  

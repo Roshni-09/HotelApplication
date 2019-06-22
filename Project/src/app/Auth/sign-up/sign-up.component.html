@@ -1,4 +1,8 @@
-<form [formGroup]="profileForm" (ngSumbit)="onsubmit()">
+<div class="divclass">
+ <div id="formDiv">
+   
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <mat-card><h3>Registration</h3>
   <p>
     <mat-form-field>
       <input matInput placeholder="Enter your Name" formControlName="name" required>
@@ -15,7 +19,7 @@
   </p>
   <p>
     <mat-form-field>
-      <input matInput placeholder="Enter your password" formControlName="password" required>
+      <input matInput placeholder="Enter your password" type="password" formControlName="password" required>
       <mat-error *ngIf="profileForm.get('password').invalid">{{getPasswordErrorMessage()}}</mat-error>
     </mat-form-field>
 
@@ -30,8 +34,11 @@
   <p>
     <mat-radio-group aria-label="Select an option">
       <mat-radio-button value="user">User</mat-radio-button>
-      <mat-radio-button value="merchent">Merchent</mat-radio-button>
+      <mat-radio-button value="merchent">Merchant</mat-radio-button>
     </mat-radio-group>
   </p>
-<button mat-button>SignUp</button>
+<button   mat-raised-button color="primary" type="submit" class="button" >SignUp</button>
+</mat-card>
 </form>
+</div>
+</div>

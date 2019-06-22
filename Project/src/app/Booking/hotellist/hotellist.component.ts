@@ -20,30 +20,29 @@ export class HotellistComponent implements OnInit {
   
   constructor(private establishmentservice: EstablishmentService) { }
   ngOnInit() {
-
     // this.establishments = this.establishmentservice.getEstablishment();
     // console.log(this.estalishments);
     //.subscribe(data =>this.estalishments=data)
     // const eservice=this.establishmentservice.getEstablishment();
-    this.establishmentservice.filterSubject.subscribe(filterData => this.establishments = filterData)
+    this.establishmentservice.filterSubject.subscribe(filterData =>{
+
+     this.establishments = filterData;
+     this.getSort();
+    });
     this.establishmentservice.getEstablishment();
-    this.getSort();
-
   }
-
 getRating(){
-  if(this.rating == 1)
+  if(this.rating === 1)
   {
     this.rating=2;
-  }
-  else{
+  }else{
     this.rating=1;
   }
   this.price=0;
   this.getSort();
 }
 getPrice(){
-  if(this.price==1){
+  if(this.price === 1){
     this.price=2;
   }
   else{
@@ -52,19 +51,16 @@ getPrice(){
   this.rating=0;
   this.getSort();
 }
-
 getSort(){
 //console.log(this.rating);
 if(this.rating==1){
-  this.establishments.sort((a,b)=>a.averageRating-b.averageRating);
-}
-else if(this.rating==2){
-this.establishments.sort((a,b)=>b.averageRating-a.averageRating);
+  this.establishments.sort((a,b)=>a.averagerating-b.averagerating);
+}else if(this.rating==2){
+this.establishments.sort((a,b)=>b.averagerating-a.averagerating);
 }
 if(this.price==1){
 this.establishments.sort((a,b)=>a.price-b.price);
-}
-else if(this.price==2){
+}else if(this.price==2){
 this.establishments.sort((a,b)=>b.price-a.price);
 }
 }

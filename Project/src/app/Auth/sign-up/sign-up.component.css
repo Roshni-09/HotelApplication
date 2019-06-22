@@ -1,0 +1,38 @@
+#formDiv{
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  .divclass{
+ 
+ 
+    position: fixed;
+   
+   background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+     min-width: 100%;
+     height: 100%;
+     background-image: url("../../../assets/images/signup.jpg");
+}
+
+form{
+    width: 25%;
+    margin: auto;
+   /* margin-top: 10px; */
+   left: 50%; 
+   color: black;
+   /* height: 50px;*/
+  } 
+
+  .button{
+  
+    height: 40px;
+    width: 100px;
+  
+   }
+
+   mat-card{
+       margin-top: 0px;
+   }

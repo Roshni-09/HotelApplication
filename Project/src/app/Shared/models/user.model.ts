@@ -5,11 +5,16 @@ export class User {
     id:number;
     name:string;
     email: string;
-    phoneNumber : string;
+    phoneNumber: string;
     password: string;
     isBlocked: boolean;
     role: string;
     establishment: Establishment[];
     reviews: Review[];
     bookingList: Booking[];
+
+    constructor(name:string) {
+    this.name = name;
+    }
 }
+

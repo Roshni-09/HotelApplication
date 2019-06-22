@@ -1,0 +1,36 @@
+<div class="mybooking">
+  <mat-tab-group>
+    <mat-tab label="Past Bookings">
+       <div  fxLayout="row wrap" *ngFor="let list of checkin" class="bookinggap">
+        <img src="../../assets/images/download.jpg" style="height: 285px;width:380px;">
+        <div class="bookingcontent">
+          <!-- <h3>{{list.Booked_by.name}}</h3> -->
+            <h3>{{list.establishment.name}}</h3>
+          <p>Location,&nbsp;&nbsp;Bangalore</p>
+          <!-- <p>Car Parking | Car Parking | Car Parking</p> -->
+          <p><mat-icon>star</mat-icon>{{list.establishment.averagerating}}</p>
+          <h4>{{list.price | currency:'&#8377;'}}, ({{list.no_of_person}} Guest)</h4>
+          <h4>CheckIn- {{list.Check_in_date|date}}, Check Out- {{list.Check_out_date|date}}</h4>
+          <button mat-raised-button color="primary" (click)="booknow()">Book</button>&nbsp;
+          <button mat-raised-button color="primary">Post Review</button>&nbsp;
+          <button mat-raised-button color="primary">Raise Complaint </button>&nbsp;
+          
+        </div>
+       </div>  
+    </mat-tab>
+    <mat-tab label="UpComing Bookings">
+        <div fxLayout="row wrap" *ngFor="let list of checkout" class="bookinggap">
+            <img src="../../assets/images/download.jpg"  style="height: 224px;width:380px;">
+            <div class="bookingcontent">
+                <!-- <h3>{{list.Booked_by.name}}</h3> -->
+                <h3>{{list.establishment.name}}</h3>
+                <p>Location&nbsp;&nbsp;Banglore</p>
+                <!-- <p>Car Parking | Car Parking | Car Parking</p> -->
+                <p><mat-icon>star</mat-icon>{{list.establishment.averagerating}}</p>
+                <h4>{{list.price | currency:'&#8377;'}}, ({{list.no_of_person}} Guest)</h4>
+                <h4>Check In - {{list.Check_in_date|date}}, CheckOut - {{list.Check_out_date|date}}</h4>
+            </div>
+           </div> 
+   </mat-tab>
+  </mat-tab-group>
+</div>
